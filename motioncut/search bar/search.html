@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search bar</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <!-- <div class="search-container"> -->
+        <!-- <h1>Search Interface</h1> -->
+        <div class="search-box">
+            <select class="category-dropdown"  onchange="resetDropdown()" onclick="toggleDropdown()">
+                <option value="everything" >Everything</option>
+                <br>
+                <option value="software">Software Development</option>
+                <br>
+                <option value="development">Web Development</option>
+                <br>
+                <option value="data">Data Analyst</option>
+                <br>
+                <option value="it">IT Consultant</option>
+                <br>
+                <option value="Net">Network Adminstrator</option>
+                <br>
+            </select>
+            <input type="text" class="search-input" placeholder="Search everything">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            document.getElementById('dropdown-options').classList.toggle('show');
+        }
+
+        function selectOption(value) {
+            document.getElementById('category-dropdown').innerText = value;
+            document.getElementById('dropdown-options').classList.remove('show');
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown-container')) {
+                document.getElementById('dropdown-options').classList.remove('show');
+            }
+        });
+    </script>
+ <!-- </div>    -->
+</body>
+</html>
